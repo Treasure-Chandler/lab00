@@ -9,11 +9,16 @@ package lab00;
 public class PracticeLab {
  
     public static void main(String[] args) {
-        // problem 1:
         // declared variables
+        // problem 1:
  		String firstName = "Charles";
  		String lastName = "Dickens";
         String middleName = "John Huffam";
+        // problem 8:
+        int iEleven = 11;
+        int iThree = 3;
+        double dEleven = 11;
+        double dThree = 3;
 
         // problem 2:
         nameDisplay();
@@ -22,7 +27,7 @@ public class PracticeLab {
         nameDisplay(firstName, middleName, lastName);
 
         // problem 5:
-        System.out.println("\n Check whether the name is Charles John-Huffam Dickens.");
+        System.out.println("Check whether the name is Charles John-Huffam Dickens.");
         nameDisplay(firstName, "John-Huffam", lastName);
 
         // problem 6:
@@ -33,19 +38,29 @@ public class PracticeLab {
         // problem 7:
         System.out.println();
         divideDisplay();
+        System.out.print("My experience:\n" + 
+                        "\tThe first three expressions are integer divisions as both operands\n" +
+                        "\tof the divisions return an integer; because of this, there are no\n" +
+                        "\tdouble/floating numbers present. In the last three expressions, the\n" +
+                        "\toperation of division returns a floating point value of a double data\n" + 
+                        "\ttype, since 2., 3., and 4., are floating-point numbers of a double data\n" +
+                        "\ttype. Moreover, before the division operator is processes, the compiler\n" +
+                        "\tconverts 1, 11, and 5 into floating-point values of the double data type.\n" +
+                        "\tThis conversion is called a widening conversion. the '+' is an operation for\n" +
+                        "\tconcatenation. The symbol '/t' (forward slash t, as it won't show up in text)\n" +
+                        "\tis an escape sequence, which will use the cursor to skip over to the next tab step.");
 
-        // String statement = "My experience:\n" + 
-        //                     "\tThe first three expressions are integer divisions as both operands\n" +
-        //                     "\tof the divisions return an integer; because of this, there are no\n" +
-        //                     "\tdouble/floating numbers present. In the last three expressions, the\n" +
-        //                     "\toperation of division returns a floating point value of a double data\n" + 
-        //                     "\ttype, since 2., 3., and 4., are floating-point numbers of a double data\n" +
-        //                     "\ttype. Moreover, before the division operator is processes, the compiler\n" +
-        //                     "\tconverts 1, 11, and 5 into floating-point values of the double data type.\n" +
-        //                     "\tThis conversion is called a widening conversion. the '+' is an operation for\n" +
-        //                     "\tconcatenation. The symbol '/t' (forward slash t, as it won't show up in text)\n" +
-        //                     "\tis an escape sequence, which will use the cursor to skip over to the next tab step.";
-        // System.out.print(statement);
+        // problem 9:
+        divideDisplay(iEleven, dEleven, iThree, dThree);
+
+        System.out.printf("%d\t%d\t%.16f\t%.16f\t%.16f\n" +
+                        "%.16f\t%.16f\t%.16f\t%.16f\n" +
+                        "%.1f\t%.1f\t%d\t%d\n\n",
+                        iEleven/iThree, iThree/iEleven, dThree/iEleven, dEleven/iThree, iThree/dEleven, iEleven/dThree, dEleven/dThree, iEleven/(double)iThree, (double)iEleven/iThree, (double)(iEleven/iThree), (double)(iThree/iEleven), (int)(dEleven/dThree), (int)(dThree/dEleven));
+
+        // problem 10:
+        System.out.printf("(int)iEleven/dThree = %.16f\n(int)(iEleven/dThree) = %d\n(int)(iEleven/dThree * 1000)/1000.) = %.3f",
+                        (int)iEleven/dThree, (int)(iEleven/dThree), (int)(iEleven/dThree * 1000)/1000.);
     } /* end of main() */
 
     // problem 3:
@@ -82,12 +97,23 @@ public class PracticeLab {
         return "End of tasks!";
     } // end of nameDisplay(String fName, String mName, String lastName)
 
-     public static void divideDisplay() {
+    public static void divideDisplay() {
         System.out.println();
         System.out.printf("1/2\t11/3\t4/5\t1/2.\t11/3.\t\t\t4./5\n");
         System.out.println(1/2 + "\t" + 11/3 + "\t" + 4/5 + "\t"
-                         + 1/2. + "\t" + 11/3. + "\t" + 4./5); 
-        System.out.println();       
-     } // end of divideDisplay()
+                        + 1/2. + "\t" + 11/3. + "\t" + 4./5); 
+        System.out.println();
+        System.out.printf("1/2 = %d,\t11/3 = %d,\t4/5 = %d,\t" + 
+                        "1/2. = %.1f,\t11/3. = %.16f,\t4./5 = %f\n",
+                        1/2, 11/3, 4/5, 1/2., 11/3., 4./5);
+    } // end of divideDisplay()
+
+    // problem 9:
+    public static void divideDisplay(int i11, double d11, int i3, double d3) {
+        System.out.printf("\n\n" +
+                        "i11/i3 = %d,\ti3/i11 = %d,\td3/i11 = %.6f,\t" +
+                        "d11/i3 = %.6f,\ti3/d11 = %.6f\n\n",
+                        i11/i3, i3/i11, d3/i11, d11/i3, i3/d11);
+    } // end of divideDisplay(int i11, double d11, int i3, double d3)
  
 } // end of PracticeLab
