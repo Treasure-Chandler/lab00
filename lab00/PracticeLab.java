@@ -61,6 +61,9 @@ public class PracticeLab {
         // problem 10:
         System.out.printf("(int)iEleven/dThree = %.16f\n(int)(iEleven/dThree) = %d\n(int)(iEleven/dThree * 1000)/1000.) = %.3f",
                         (int)iEleven/dThree, (int)(iEleven/dThree), (int)(iEleven/dThree * 1000)/1000.);
+
+        // problem 11:
+        // squareCubeRoot(7);
     } /* end of main() */
 
     // problem 3:
@@ -115,5 +118,10 @@ public class PracticeLab {
                         "d11/i3 = %.6f,\ti3/d11 = %.6f\n\n",
                         i11/i3, i3/i11, d3/i11, d11/i3, i3/d11);
     } // end of divideDisplay(int i11, double d11, int i3, double d3)
+
+    // problem 11:
+    public static void squareCubeRoot(int num) {
+
+    }
  
 } // end of PracticeLab
