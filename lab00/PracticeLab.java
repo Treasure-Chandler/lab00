@@ -158,7 +158,7 @@ public class PracticeLab {
         System.out.printf("sqrt(%d) = %.4f\n" +
                         "cbrt(%d) = %.4f\n\n",
                         num, Math.sqrt(num), num, Math.cbrt(num));
-    }
+    } // end of squareCubeRoot(int num)
 
     /**
      * 
@@ -185,6 +185,6 @@ public class PracticeLab {
                         i3 / (i11 - iNumber) + i3 * iPrime, +
                         i3 / (i11 - iNumber + i3) * iPrime, +
                         i3 / i11 - (iNumber + i3) * iPrime);
-    }
+    } // end of computeDisplay(int i11, int i3, int iNumber, int iPrime)
  
 } // end of PracticeLab
