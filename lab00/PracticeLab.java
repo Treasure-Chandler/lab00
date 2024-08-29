@@ -56,14 +56,24 @@ public class PracticeLab {
         System.out.printf("%d\t%d\t%.16f\t%.16f\t%.16f\n" +
                         "%.16f\t%.16f\t%.16f\t%.16f\n" +
                         "%.1f\t%.1f\t%d\t%d\n\n",
-                        iEleven/iThree, iThree/iEleven, dThree/iEleven, dEleven/iThree, iThree/dEleven, iEleven/dThree, dEleven/dThree, iEleven/(double)iThree, (double)iEleven/iThree, (double)(iEleven/iThree), (double)(iThree/iEleven), (int)(dEleven/dThree), (int)(dThree/dEleven));
+                        iEleven/iThree, iThree/iEleven, dThree/iEleven, dEleven/iThree, iThree/dEleven, +
+                        iEleven/dThree, dEleven/dThree, iEleven/(double)iThree, (double)iEleven/iThree, +
+                        (double)(iEleven/iThree), (double)(iThree/iEleven), (int)(dEleven/dThree), (int)(dThree/dEleven));
 
         // problem 10:
-        System.out.printf("(int)iEleven/dThree = %.16f\n(int)(iEleven/dThree) = %d\n(int)(iEleven/dThree * 1000)/1000.) = %.3f",
+        System.out.printf("(int)iEleven/dThree = %.16f\n(int)(iEleven/dThree) = %d\n(int)(iEleven/dThree * 1000)/1000.) = %.3f\n\n",
                         (int)iEleven/dThree, (int)(iEleven/dThree), (int)(iEleven/dThree * 1000)/1000.);
 
         // problem 11:
-        // squareCubeRoot(7);
+        squareCubeRoot(7);
+
+        // problem 13:
+        int iNumber = 8;
+        int iPrime = 5;
+
+        // problem 14:
+        computeDisplay(iEleven, iThree, iNumber, iPrime);
+
     } /* end of main() */
 
     // problem 3:
@@ -82,6 +92,11 @@ public class PracticeLab {
 
     } // end of nameDisplay()
 
+    /**
+     * @param fName     String class, first name
+     * @param mName     String class, middle name
+     * @param lastName  String class
+     */
     // problem 4:
     public static String nameDisplay(String fName, String mName, String lastName) {
         // observation of the outputs from the print(), println().=, and println() methods
@@ -111,6 +126,13 @@ public class PracticeLab {
                         1/2, 11/3, 4/5, 1/2., 11/3., 4./5);
     } // end of divideDisplay()
 
+    /**
+     * 
+     * @param i11       int class, integer 11
+     * @param d11       double class, double 11
+     * @param i3        int class, integer 3
+     * @param d3        double class, double 3
+     */
     // problem 9:
     public static void divideDisplay(int i11, double d11, int i3, double d3) {
         System.out.printf("\n\n" +
@@ -119,9 +141,50 @@ public class PracticeLab {
                         i11/i3, i3/i11, d3/i11, d11/i3, i3/d11);
     } // end of divideDisplay(int i11, double d11, int i3, double d3)
 
+    /**
+     * 
+     * @param num       int class, number to calculate the 
+     *                  square and cube root of
+     */
     // problem 11:
     public static void squareCubeRoot(int num) {
+        System.out.println("sqrt(" + num + ") = " + Math.sqrt(num));
+        System.out.println("cbrt(" + num + ") = " + Math.cbrt(num) + "\n");
 
+        // problem 12:
+        System.out.printf("sqrt(%d) = %.2f\n" +
+                        "cbrt(%d) = %.2f\n\n",
+                        num, Math.sqrt(num), num, Math.cbrt(num));
+        System.out.printf("sqrt(%d) = %.4f\n" +
+                        "cbrt(%d) = %.4f\n\n",
+                        num, Math.sqrt(num), num, Math.cbrt(num));
+    }
+
+    /**
+     * 
+     * @param i11       int class, integer 11
+     * @param i3        int class, integer 3
+     * @param iNumber   int class, integer 8
+     * @param iPrime    int class, integer 5
+     */
+    // problem 14:
+    private static void computeDisplay(int i11, int i3, int iNumber, int iPrime) {
+        System.out.printf("iEleven / 2 * 2 = %d\n" + 
+                        "iThree * iNumber + iEleven / iPrime = %d\n" +
+                        "iThree / iEleven - iNumber + iThree * iPrime = %d\n" +
+                        "iEleven / (2 * 2) = %d\n" +
+                        "iThree * (iNumber + iEleven) / iPrime = %d\n" +
+                        "iThree / (iEleven - iNumber) + iThree * iPrime = %d\n" +
+                        "iThree / (iEleven - iNumber + iThree) * iPrime = %d\n" +
+                        "iThree / iEleven - (iNumber + iThree) * iPrime = %d\n",
+                        i11 / 2 * 2, +
+                        i3 * iNumber + i11 / iPrime, +
+                        i3 / i11 - iNumber + i3 * iPrime, +
+                        i11 / (2 * 2), +
+                        i3 * (iNumber + i11 / iPrime), +
+                        i3 / (i11 - iNumber) + i3 * iPrime, +
+                        i3 / (i11 - iNumber + i3) * iPrime, +
+                        i3 / i11 - (iNumber + i3) * iPrime);
     }
  
 } // end of PracticeLab
